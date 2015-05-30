@@ -21,7 +21,7 @@ html {
 }
 
 .nx-date {
-  font-size: 18px;
+  font-size: 16px;
   font-style: bold;
 }
 
@@ -32,6 +32,7 @@ html {
 
 .nx-title {
   border: solid 1px;
+  font-size: 12px;
 
 }
 
