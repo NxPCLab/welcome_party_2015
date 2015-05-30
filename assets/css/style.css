@@ -21,8 +21,11 @@ html {
 }
 
 .nx-date {
+  font-size: 18px;
+}
+
+.nx-date-mobile {
   font-size: 16px;
-  font-style: bold;
 }
 
 .uk-container-center {
@@ -177,4 +180,5 @@ html {
   color: red;
   font-size: 22px;
 }
+
 

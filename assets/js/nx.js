@@ -59,6 +59,12 @@ jQuery(function($){
     clearInterval(glitch);
   }
 
+  $('.event-btn').hover(function(){
+    $(this).attr("style", "filter:alpha(opacity=50);-moz-opacity: 0.5;opacity: 0.5;");
+  },function(){
+    $(this).attr("style", "");
+  });
+
   var ctrl_enable = 0;
   $(".ctrl").on("click", function() {
     $(".b_text").html("あ゛あ゛あ゛！");
