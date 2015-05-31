@@ -12,18 +12,28 @@ jQuery(function($){
       enable = 1;
       if (rand == 0) {
        $(".nx-lubi").html("えぬえっくすぴぃしーらぼ　うぇるかむぱーてぃ");
+       $(".b_text").html("ねくねくだぇ！");
+       $(".g_text").html("とぎとぎわね！");
        rand = 1;
       } else if (rand == 1) {
        $(".nx-lubi").html("えぬえっくスぴぃしーらぼ　うぇるかむぱーてぃ");
+       $(".b_text").html("繝ｼわくだね！");
+       $(".g_text").html("どき縺ｮだね！");
        rand = 2;
       } else if (rand == 2) {
        $(".nx-lubi").html("えぬえっくすぴぃしーらぼ　うえるかむぱーてぃ");
+       $(".b_text").html("ك?كƒكƒだね！");
+       $(".g_text").html("كね！");
        rand = 3;
       } else if (rand == 3) {
        $(".nx-lubi").html("えぬえっくすぴぃしーらぼ　うぇるかむぱぁてぃ");
+       $(".b_text").html("わくわくだね！");
+       $(".g_text").html("どきどきだね！");
        rand = 4;
       } else if (rand == 4) {
        $(".nx-lubi").html("えめえっくすぴぃしーらぼ　うぇるかむぱーてぃ");
+       $(".b_text").html("ねくねくだね！");
+       $(".g_text").html("とぎとぎだね！");
        rand = 0;
       }
   } , time )};
@@ -67,8 +77,6 @@ jQuery(function($){
 
   var ctrl_enable = 0;
   $(".ctrl").on("click", function() {
-    $(".b_text").html("あ゛あ゛あ゛！");
-    $(".g_text").html("う゛あ゛あ゛！");
     if (ctrl_enable == 0) {
       $(".ctrl-img").attr("src", "/assets/images/ctrl_yellow.png"); 
       ctrl_enable = 1;
@@ -90,8 +98,8 @@ jQuery(function($){
   $(".command").on("click", function() {
 
     if (command_enable == 0) {
-      $(".b_text").html("ぐぎぎぎぎ！");
-      $(".g_text").html("ごごごごご！");
+      $(".b_text").html("繝ｼわくだね！");
+      $(".g_text").html("どき縺ｮだね！");
       $('.nx-main-img').jrumble({
         x: 20,
         y: 0,
@@ -99,10 +107,27 @@ jQuery(function($){
       });
       $('.nx-main-img').trigger('startRumble');
 
+      $('.g_text').jrumble({
+        x: 10,
+        y: 10,
+        rotation: 4
+      });
+      $('.b_text').jrumble({
+        x: 10,
+        y: 10,
+        rotation: 4
+      });
+      $('.g_text').trigger('startRumble');
+      $('.b_text').trigger('startRumble');
+
+
+
       $(".command-img").attr("src", "/assets/images/command_yellow.png"); 
       command_enable = 1;
     } else {
       $('.nx-main-img').trigger('stopRumble');
+      $('.g_text').trigger('stopRumble');
+      $('.b_text').trigger('stopRumble');
       $(".command-img").attr("src", "/assets/images/command.png"); 
       command_enable = 0;
     }
@@ -150,10 +175,11 @@ jQuery(function($){
 
     console.log("kick");
     if (i_enable && command_enable && ctrl_enable) {
-      console.log("special");
       stopGlitch();
       stopTimer();
       $('.nx-main-img').trigger('stopRumble');
+      $('.g_text').trigger('stopRumble');
+      $('.b_text').trigger('stopRumble');
       $(".b_text").html("ようこそ。");
       $(".g_text").html("あそぼう。");
       $(".uk-container-center").fadeOut(3000, function() {
@@ -169,6 +195,8 @@ jQuery(function($){
     y: 20,
     rotation: 4
   });
+
+
 
   $('.nx-rum-title').hover(function(){
     $(this).trigger('startRumble');
@@ -196,7 +224,7 @@ jQuery(function($){
      $('.act-name').html("Scott Allen");
      $('.act-desc').html("地黒歴28年，VJ歴6年の生成系男子．");
     } else if (target == "sugiyama") {
-     $('.act-img').attr("src", "/assets/images/sena.png");
+     $('.act-img').attr("src", "/assets/images/sugiyama.jpg");
      $('.act-name').html("すぎやまゆうや");
      $('.act-desc').html("1992.11.5生まれ<br>静岡県藤枝市生まれ青春育ち、偉そうなやつとマイノリティーとは大体友達にはなれず音楽やれずに美大ミーハーフリーク卒。高校時代バンドライブ1回、DJまがい経験1回。バンドマンの知り合い多すぎてフラストレーション常にマックス、スキルはねえけど愛する音楽数知れず。軋むギター今日に明日を混ぜる毎日にグッドラック、お手柔らかに。");
 
